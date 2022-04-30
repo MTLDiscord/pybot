@@ -31,7 +31,7 @@ class rules(commands.Cog, discord.ui.View):
             if mrole in member.roles:
                 await ctx.response.send_message("Вы уже прошли верификацию!", ephemeral=True)
             else:
-                await member.add_roles(role)
+                await member.add_roles(role, reason = "Пользователь прошёл авторизацию")
         button1.callback = button_callback
         view = View()
         view.add_item(button1)
